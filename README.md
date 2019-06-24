@@ -13,3 +13,5 @@ DriveUpload is a python script to automatically upload all the content of the pa
 8. Upon id creation, you will be able to see a download icon that will download your keys as json.
 9. Copy this file to the location where your DriveUpload.py is located.
 10. Rename the .json file to client_secrets.json
+
+Thats it!!!
