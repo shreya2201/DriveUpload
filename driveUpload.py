@@ -11,7 +11,8 @@ if gauth.credentials is None:
     gauth.GetFlow()
     gauth.flow.params.update({'access_type': 'offline'})
     gauth.flow.params.update({'approval_prompt': 'force'})
-    gauth.LocalWebserverAuth()
+    # Creates local webserver and auto handles authentication.
+    gauth.LocalWebserverAuth()    
 elif gauth.access_token_expired:
     # Refresh them if expired
     gauth.Refresh()
@@ -21,6 +22,7 @@ else:
 # Save the current credentials to a file
 gauth.SaveCredentialsFile("mycreds.txt")
 
+# Create GoogleDrive instance with authenticated GoogleAuth instance.
 drive = GoogleDrive(gauth)
 
 #fid is the id of the folder in drive where all the files will be backed up
